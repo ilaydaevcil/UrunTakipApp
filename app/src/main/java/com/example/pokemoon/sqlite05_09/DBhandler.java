@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,12 +59,14 @@ public class DBhandler  extends SQLiteOpenHelper {
     }
 
     public List<UrunBilgiClass> getAll() {
+
         List<UrunBilgiClass> contactList = new ArrayList<UrunBilgiClass>();
         String selectQuery = "SELECT * FROM " + TABLE_NAME; //retrieve data from the database
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
+
                 UrunBilgiClass m = new UrunBilgiClass();
                 m.setKey(cursor.getInt(0));
                 m.setUrunadi(cursor.getString(1));
@@ -76,6 +79,7 @@ public class DBhandler  extends SQLiteOpenHelper {
 
         return contactList;
     }
+
     public void delete(int key)
     {    //code to delete a row from the table
         SQLiteDatabase db = this.getWritableDatabase();

@@ -21,7 +21,10 @@ public class Editact extends AppCompatActivity {
         fiyati =findViewById(R.id.txturunfiyati);
         b1=findViewById(R.id.btnedit);
 
+
+
         //get data from intent using  getStringExtra
+
         String adi = getIntent().getStringExtra("urunadi");
         int adet = getIntent().getIntExtra("adet",0);
         int fiyat = getIntent().getIntExtra("fiyat", 0);
@@ -29,7 +32,8 @@ public class Editact extends AppCompatActivity {
 
         this.adi.setText(adi);
         this.adeti.setText(String.valueOf(adet));
-        this.fiyati.setText(fiyat);
+        this.fiyati.setText(String.valueOf(fiyat));
+
 
         //on click of EDIT button
 

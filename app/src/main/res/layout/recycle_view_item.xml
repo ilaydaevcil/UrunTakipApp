@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_data"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -13,58 +14,101 @@
     android:paddingTop="10dp">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Urun Adı"
+        android:textStyle="italic"
+        android:textColor="#efc1c1"
+        />
+
+
+    <TextView
         android:id="@+id/urunadiitem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/urunfiyati"
         android:layout_centerHorizontal="true"
         android:text="Urun adi"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="35dp"
         android:textStyle="bold" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:textStyle="italic"
+
+        android:layout_height="match_parent"
+        android:textColor="#ecb0b0"
+        android:text="Fiyatı"
+     />
+    <TextView
         android:id="@+id/urunfiyatiitem"
         android:layout_width="match_parent"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_below="@+id/urunadiitem"
         android:layout_above="@id/urunadetiitem"
         android:layout_centerHorizontal="true"
         android:text="Fiyati"
-        android:textColor="#000000"
         android:textSize="20dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="#e2b6b6"
+        android:textStyle="italic"
+        android:layout_height="match_parent"
+        android:text="Adeti"        />
+
 
     <TextView
         android:id="@+id/urunadetiitem"
+
+        android:textStyle="bold"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="adeti"
         android:layout_below="@+id/urunfiyati"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/urunadetiitem"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff">
+
 
         <Button
             android:id="@+id/btnedit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_editt"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/btnsat"
+            android:layout_width="130dp"
+            android:layout_height="120dp"
             android:layout_alignParentTop="true"
-            android:background="#c7c7c7"
-            android:text="EDIT" />
+            android:layout_centerHorizontal="true"
+
+            android:background="@drawable/ic_sale" />
 
         <Button
             android:id="@+id/btndel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:background="#c7c7c7"
-            android:text="DELETE" />
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_del"
+            android:text=""
+            android:layout_alignParentRight="true" />
+
     </RelativeLayout>
 
 </LinearLayout>

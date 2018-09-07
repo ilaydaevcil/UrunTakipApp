@@ -18,7 +18,7 @@ public class UAdapter extends RecyclerView.Adapter<UAdapter.MyVievHolder> {
     public Context mContext;
 
     public class MyVievHolder extends RecyclerView.ViewHolder {
-        Button b2, b3;
+        Button b2, b3,b4;
         TextView u1, u2, u3;
         //todo üstten public sildik
 
@@ -30,6 +30,7 @@ public class UAdapter extends RecyclerView.Adapter<UAdapter.MyVievHolder> {
             u3 = itemView.findViewById(R.id.urunfiyatiitem);
             b2 = itemView.findViewById(R.id.btnedit);
             b3 = itemView.findViewById(R.id.btndel);
+            b4=itemView.findViewById(R.id.btnsat);
 
         }
 
@@ -73,14 +74,22 @@ public class UAdapter extends RecyclerView.Adapter<UAdapter.MyVievHolder> {
         holder.b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(mContext, Editact.class);
                 //pass details to to be edited to next class using putExtra
                 i.putExtra("urunadi", urunBilgiClass.getUrunadi());
                 i.putExtra("fiyat", urunBilgiClass.getFiyat());
                 i.putExtra("adet", urunBilgiClass.getAdet());
                 i.putExtra("key", urunBilgiClass.getKey());
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+               i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(i);
+            }
+        });
+        holder.b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean act;
+
             }
         });
 

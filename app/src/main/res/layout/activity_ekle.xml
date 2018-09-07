@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/arkaplan3"
-
+    android:background="@drawable/yav"
     android:layout_height="match_parent"
     tools:context=".ActivityEkle">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/urunadi"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="56dp"
 
@@ -30,6 +31,7 @@
             android:id="@+id/txturunadi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textColor="#ffffff"
             android:hint="Urününüz neeeyse ismini tam buaraya gireceksiniz efendim" />
     </android.support.design.widget.TextInputLayout>
 
@@ -39,6 +41,8 @@
         android:layout_height="61dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:textColorHint="#ffffff"
+
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
@@ -54,6 +58,8 @@
             android:id="@+id/txturunfiyati"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+
             android:hint="Her şeyin bir fiyatı vardır"
             android:inputType="number" />
 
@@ -61,9 +67,12 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/urunadeti"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textColorHint="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,19 +83,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="peki ya kaç deeene........ "
-            android:inputType="number" />
+
+
+            android:inputType="number"
+            android:textColor="#ffffff" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btnekle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="ekle"
+        android:background="@drawable/ic_kaydet"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/urunadeti" />
+        app:layout_constraintTop_toBottomOf="@+id/urunadeti"
+        app:layout_constraintVertical_bias="0.23000002" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#7db188"
+        android:textStyle="italic"
+
+        android:text="Yazdıklarımızı kontrol ediip yandakine tıklıyoruz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnekle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/urunadeti"
+        app:layout_constraintVertical_bias="0.26999998" />
 </android.support.constraint.ConstraintLayout>

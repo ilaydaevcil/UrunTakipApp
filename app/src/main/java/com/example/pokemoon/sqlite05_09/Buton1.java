@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +23,16 @@ public class Buton1 extends AppCompatActivity {
     private List<UrunBilgiClass> urunlist = new ArrayList<>();
     private RecyclerView recyclerView;
     private UAdapter mAdapter;
+    Button gorunmez;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buton1);
+
+
+
 
         //initialise recyclerview
         recyclerView = findViewById(R.id.recycler_view);
@@ -38,9 +47,12 @@ public class Buton1 extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
         //call method to fetch data from db and add to recyclerview
         prepareData();
+        //
 
 
     }
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -54,6 +66,7 @@ public class Buton1 extends AppCompatActivity {
         final List<UrunBilgiClass> m = db.getAll();
         //Log.w("SIZE", "" + m.size());
         db.close();
+
         //if m contains data
         if (m.size() > 0) {
             //loop through contents
@@ -82,5 +95,6 @@ public class Buton1 extends AppCompatActivity {
         startActivity(insert);
         return super.onOptionsItemSelected(item);
     }
+
 
 }
