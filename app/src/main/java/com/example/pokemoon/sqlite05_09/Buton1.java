@@ -1,6 +1,8 @@
 package com.example.pokemoon.sqlite05_09;
 
+import android.content.Context;
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -13,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +26,11 @@ public class Buton1 extends AppCompatActivity {
     private List<UrunBilgiClass> urunlist = new ArrayList<>();
     private RecyclerView recyclerView;
     private UAdapter mAdapter;
-    Button gorunmez;
+    DBhandler dBhandler;
+    public Context mContext;
+
+
+
 
 
     @Override
@@ -47,7 +54,28 @@ public class Buton1 extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
         //call method to fetch data from db and add to recyclerview
         prepareData();
-        //
+        //swipe tatavası
+
+        new SwipeHelper(this, recyclerView) {
+            @Override
+            public void instantiateUnderlayButton(final RecyclerView.ViewHolder viewHolder, List<UnderlayButton> underlayButtons) {
+                underlayButtons.add(new SwipeHelper.UnderlayButton(
+                        "Delete",
+                        R.drawable.ic_add,
+                        ContextCompat.getColor(getApplicationContext(), R.color.red),
+                        new UnderlayButtonClickListener() {
+                            @Override
+                            public void onClick(int pos) {
+                                dBhandler.delete(urunlist.get(viewHolder.getAdapterPosition()).getKey());
+                                urunlist.remove(pos);
+                                mAdapter.notifyDataSetChanged();
+                                Toast.makeText(mContext, "Item Deleted", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                ));
+            }
+        };
 
 
     }
