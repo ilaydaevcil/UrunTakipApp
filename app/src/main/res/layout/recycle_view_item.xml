@@ -90,25 +90,6 @@
             android:background="@drawable/ic_editt"
             android:layout_alignParentLeft="true" />
 
-        <Button
-            android:id="@+id/btnsat"
-            android:layout_width="130dp"
-            android:layout_height="120dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-
-            android:background="@drawable/ic_sale" />
-
-        <Button
-            android:id="@+id/btndel"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/ic_del"
-            android:text=""
-            android:layout_alignParentRight="true" />
-
     </RelativeLayout>
 
 </LinearLayout>

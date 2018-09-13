@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_data"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp">
+
+
+    <DatePicker
+            android:id="@+id/sale_popup_datepicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"></DatePicker>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/sale_popup_minus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="90dp"
+            android:background="@drawable/ic_eksi"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="90dp" />
+
+
+        <EditText
+            android:id="@+id/sale_popup_stocknum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:ems="3"
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/sale_popup_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/sale_popup_stocknum"
+            android:background="@drawable/ic_arti"
+            android:layout_toRightOf="@+id/sale_popup_stocknum" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnsat"
+        android:layout_width="130dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+        android:background="@drawable/ic_sale" />
+
+</LinearLayout>

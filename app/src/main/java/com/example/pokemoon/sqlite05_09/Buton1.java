@@ -69,7 +69,6 @@ public class Buton1 extends AppCompatActivity {
                                 dBhandler.delete(urunlist.get(viewHolder.getAdapterPosition()).getKey());
                                 urunlist.remove(pos);
                                 mAdapter.notifyDataSetChanged();
-                                Toast.makeText(mContext, "Item Deleted", Toast.LENGTH_SHORT).show();
 
                             }
                         }
@@ -89,11 +88,10 @@ public class Buton1 extends AppCompatActivity {
 
     private void prepareData() {
         urunlist.clear();
-        DBhandler db = new DBhandler(getApplicationContext());
+        dBhandler  = new DBhandler(getApplicationContext());
         //data from database is returned to m
-        final List<UrunBilgiClass> m = db.getAll();
+        final List<UrunBilgiClass> m = dBhandler.getAll();
         //Log.w("SIZE", "" + m.size());
-        db.close();
 
         //if m contains data
         if (m.size() > 0) {

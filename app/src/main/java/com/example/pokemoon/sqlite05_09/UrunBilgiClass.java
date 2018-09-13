@@ -13,6 +13,14 @@ public class UrunBilgiClass {
         this.fiyat = fiyat;
     }
 
+    public UrunBilgiClass(int ınt, String string, int dataInt, int i) {
+this.urunadi=string;
+this.key=ınt;
+this.adet=i;
+this.fiyat=dataInt;
+
+    }
+
     public UrunBilgiClass() {
 
     }

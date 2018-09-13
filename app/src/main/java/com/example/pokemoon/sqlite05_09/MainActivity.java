@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         buttonsat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent insert= new Intent(MainActivity.this, SatisAct.class);
-                startActivity(insert);
+                //Intent insert= new Intent(MainActivity.this, SatisAct.class);
+               // startActivity(insert);
             }
         });
 

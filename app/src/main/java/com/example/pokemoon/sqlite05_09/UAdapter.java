@@ -29,8 +29,8 @@ public class UAdapter extends RecyclerView.Adapter<UAdapter.MyVievHolder> {
             u2 = itemView.findViewById(R.id.urunadetiitem);
             u3 = itemView.findViewById(R.id.urunfiyatiitem);
             b2 = itemView.findViewById(R.id.btnedit);
-            b3 = itemView.findViewById(R.id.btndel);
-            b4=itemView.findViewById(R.id.btnsat);
+
+
 
         }
 
@@ -56,21 +56,7 @@ public class UAdapter extends RecyclerView.Adapter<UAdapter.MyVievHolder> {
         holder.u1.setText(urunBilgiClassList.get(position).getUrunadi());
         holder.u2.setText(String.valueOf(urunBilgiClassList.get(position).getAdet()));
         holder.u3.setText(String.valueOf(urunBilgiClassList.get(position).getFiyat()));
-        //onClick DELETE Button
-        holder.b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DBhandler db = new DBhandler(mContext);
-                db.delete(urunBilgiClass.getKey());
-                db.close();
-                urunBilgiClassList.remove(position);
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, urunBilgiClassList.size());
-                Toast.makeText(mContext, "Item Deleted", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        //Onclick EDIT Button
+               //Onclick EDIT Button
         holder.b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,13 +69,6 @@ public class UAdapter extends RecyclerView.Adapter<UAdapter.MyVievHolder> {
                 i.putExtra("key", urunBilgiClass.getKey());
                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(i);
-            }
-        });
-        holder.b4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean act;
-
             }
         });
 

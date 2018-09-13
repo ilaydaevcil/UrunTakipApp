@@ -79,6 +79,20 @@ public class DBhandler  extends SQLiteOpenHelper {
 
         return contactList;
     }
+    public UrunBilgiClass getProduct(int id) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + ID + " = " + String.valueOf(id),null);
+
+        try {
+            if (data != null)
+                while (data.moveToFirst())
+                    return new UrunBilgiClass(data.getInt(0), data.getString(1), data.getInt(2), data.getInt(3));
+        }finally {
+            data.close();
+        }
+        return null;
+    }
 
     public void delete(int key)
     {    //code to delete a row from the table

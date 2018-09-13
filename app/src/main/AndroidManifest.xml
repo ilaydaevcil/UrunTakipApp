@@ -21,8 +21,8 @@
             android:label="@string/title_activity_buton1"
             android:theme="@style/AppTheme" />
         <activity android:name=".ActivityEkle" />
-        <activity android:name=".SatisAct" />
-        <activity android:name=".Editact"></activity>
+        <activity android:name=".Editact" />
+        <activity android:name=".SellDialog"></activity>
     </application>
 
 </manifest>
